@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horror Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="renderCanvas"></canvas>
+
+  <div id="hud">
+    <div id="objectives">
+      <div class="obj-title">OBJECTIVES</div>
+      <div class="obj-item" id="obj-key">&#9679; Find the key</div>
+      <div class="obj-item" id="obj-exit">&#9679; Reach the exit</div>
+    </div>
+
+    <div id="crosshair">+</div>
+    <div id="message"></div>
+    <div id="hint">[F] Flashlight &nbsp;|&nbsp; [Click] Lock mouse</div>
+
+    <div id="start-screen" class="overlay">
+      <div class="overlay-title">HORROR GAME</div>
+      <div class="overlay-sub">
+        Click anywhere to start<br><br>
+        <span class="small-text">
+          WASD &mdash; Move<br>
+          Mouse &mdash; Look<br>
+          F &mdash; Toggle flashlight<br>
+          Esc &mdash; Release mouse
+        </span>
+      </div>
+    </div>
+
+    <div id="gameover" class="overlay hidden">
+      <div class="overlay-title red">YOU WERE CAUGHT</div>
+      <div class="overlay-sub">Press R to restart</div>
+    </div>
+
+    <div id="win" class="overlay hidden">
+      <div class="overlay-title green">YOU ESCAPED!</div>
+      <div class="overlay-sub">Press R to restart</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
