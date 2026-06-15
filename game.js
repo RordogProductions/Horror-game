@@ -342,14 +342,22 @@ window.addEventListener('keydown', e => {
 });
 
 // ── Start screen ──────────────────────────────────────────────────────────────
-$start.addEventListener('click', () => {
-  $start.classList.add('hidden');
-  G.started = true;
-  sound.resume();
-  sound.startAmbient();
-  canvas.requestPointerLock();
-  showMessage("Find a way out. Don't be seen.", 5);
-});
+  $start.addEventListener('click', () => {
+    $start.classList.add('hidden');
+    G.started = true;
+    sound.resume();
+    sound.startAmbient();
+    canvas.focus();
+    canvas.requestPointerLock();
+    showMessage("Find a way out. Don't be seen.", 5);
+  });
+
+  canvas.addEventListener('click', () => {
+    if (G.started && !G.gameOver && !G.won) {
+      canvas.focus();
+      canvas.requestPointerLock();
+    }
+  });
 
 // ── Game loop ─────────────────────────────────────────────────────────────────
 scene.onBeforeRenderObservable.add(() => {
